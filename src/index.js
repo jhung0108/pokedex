@@ -12,6 +12,15 @@ Relay.injectNetworkLayer(
 
 const ViewerQueries = { viewer: () => Relay.QL`query { viewer }` }
 
+// This is the same as below
+// ReactDOM.render(
+//   Relay.QueryRender(
+//     component: ListPage,
+//     queries: ViewerQueries
+//   )
+//   , document.getElementById('root')
+// )
+
 ReactDOM.render(
   <Router
     forceFetch
@@ -19,7 +28,7 @@ ReactDOM.render(
     render={applyRouterMiddleware(useRelay)}
     history={browserHistory}
   >
-    <Route path='/' component={ListPage} />
+    <Route path='/' component={ListPage} queries={ViewerQueries}/>
   </Router>
   , document.getElementById('root')
 )

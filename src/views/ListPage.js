@@ -1,7 +1,8 @@
 import React from 'react'
+import Relay from 'react-relay'
 import classes from './ListPage.css'
 
-export default class ListPage extends React.Component {
+class ListPage extends React.Component {
   static propTypes = {
     viewer: React.PropTypes.object,
   }
@@ -14,3 +15,8 @@ export default class ListPage extends React.Component {
   }
 }
 
+export default Relay.createContainer(
+  ListPage, {
+    
+  }
+)
