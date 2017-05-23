@@ -28,7 +28,7 @@ ReactDOM.render(
     render={applyRouterMiddleware(useRelay)}
     history={browserHistory}
   >
-    <Route path='/' component={ListPage} queries={ViewerQueries}/>
+    <Route path='/' component={ListPage} queries={ViewerQueries} />
   </Router>
   , document.getElementById('root')
 )
