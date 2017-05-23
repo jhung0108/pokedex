@@ -10,7 +10,11 @@ class PokemonPreview extends React.Component {
   render () {
     let pokemon = this.props.pokemon
     return (
-      <div>Pokemon name: {pokemon.name}</div>
+      
+      <div>
+        <img src={pokemon.url}></img>
+        Pokemon name: {pokemon.name}
+      </div>
     )
   }
 }
@@ -37,7 +41,7 @@ class ListPage extends React.Component {
   render () {
     let pokemons = this.props.viewer.allPokemons.edges
       .map(edge => edge.node)
-      .map(pokemon => <PokemonPreviewContainer pokemon={pokemon} />)
+      .map(pokemon => <PokemonPreviewContainer key={pokemon.id} pokemon={pokemon} />)
     return (
       <div className={classes.root}>
         {pokemons}
